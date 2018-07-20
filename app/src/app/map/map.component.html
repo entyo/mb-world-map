@@ -1,0 +1,11 @@
+<agm-map *ngIf="top10" [zoom]="2" [disableDefaultUI]="false" [zoomControl]="true">
+  <div *ngFor="let v of top10; let i = index">
+    <agm-marker [latitude]="v.lat" [longitude]="v.lng" [markerDraggable]="false">
+      <agm-info-window>{{v.name}}: {{v.n}}releases</agm-info-window>
+    </agm-marker>
+    <agm-circle [latitude]="v.lat" [longitude]="v.lng" [radius]="v.n * 20000" [fillColor]="'red'">
+    </agm-circle>
+  </div>
+</agm-map>
+<p *ngIf="loadingTop10">NOW LOADING...</p>
+<input placeholder="i.e.) ska" #genre (keyup.enter)="onEnter(genre.value)" [disabled]="loadingTop10" [hidden]="loadingTop10">
