@@ -1,13 +1,10 @@
 # mb-world-map
 
-## What's this?
+## What's this？
 
-Mapping music releases in the world by genre, to GoogleMaps.
+Mapping worldwide music releases by genres to Google Maps, using MusicBrainz database dump. (MusicBrainz Web API does not handle some kinds of data we need.)
 
-Using of MusicBrainz database dump. (MusicBrainz WebAPI does not handle some kinds of data we need.)
-
-[See Screencast](https://i.giphy.com/media/1TSHxT6gIDxXO5DtJK/giphy.gif)
-
+![screencast](./screencast.gif)
 
 ## Development
 
@@ -24,7 +21,7 @@ const config = {
   database: "musicbrainz",
   user: "musicbrainz",
   password: "musicbrainz"
-}
+};
 ```
 
 ### 2. Set API(GoogleMapsAPI) key
@@ -39,7 +36,7 @@ In app.module.ts, you can set your API key.(Sorry for hard coding :sweat:)
     CommonModule,
     FormsModule,
     HttpClientModule,
-    AgmCoreModule.forRoot({ apiKey: 'API_KEY_HERE' })
+    AgmCoreModule.forRoot({ apiKey: "API_KEY_HERE" })
   ],
   providers: [],
   bootstrap: [AppComponent]
